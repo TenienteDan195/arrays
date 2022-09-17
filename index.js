@@ -56,19 +56,21 @@ function buscarporprecio(){
     }
 }
 
-let nombreCliente = promt ("Ingrese su nombre y apellido");
-alert(`bienvenido ${nombreCliente} ingrese un numero para conocer nuestro catalogo`)
+// let nombreCliente = prompt ("Ingrese nombre y apellido");
+//     alert(`bienvenido ${nombreCliente} ingrese un numero para conocer nuestro catalogo`);
+document.getElementById("myBotton").onclick = function(){
+    let myname = document.getElementById("myText").value;
+    console.log(`Bienvenido ${myname}`)
+}
 
-let menu = parseInt(prompt("1 - Acetato, 2 - Lentes de sol"))
+let contenedor = document.getElementById("contenedor");
 
-switch (menu){
-    case 1:
-        for (Acetato of arrayAcetato){Acetato.say();}
-        break;
-    
-    case 2:
-        for (LentesSol of arrayLentessol){Acetato.say();}
-    
-    default:
-        menu = parseInt(prompt(`Ingrese un nuemero del 1 al 2 para continuar`))
+document.getElementById("boton").onclick = function(){
+    let seccion = document.getElementById("Menu").value;
+
+        if (seccion === "1"){
+            contenedor.innerHTML = "<li>Acetato Azul, 250, modelo 1</li><li>Acetato Rojo</li> <li>250</li><li>modelo 2</li><li>Acetato Morado</li> <li>250</li> <li>Modelo 3</li></ul";
+        }else if(seccion === "2"){
+            contenedor.innerHTML = "Madera, 120,modelo 9,Imitacion Bambu, 120, modelo 10,Color Rojo, 120 modelo 11,Color Naranja, 120, modelo 12"
+        }
 }
